@@ -686,9 +686,9 @@ section,
   padding: 2rem 2rem 0 2rem;
 }
 
-@media(max-width:758px) {
+@media(max-width:576px) {
   .about-section {
-    margin-top: -8rem !important;
+    margin-top: -10rem !important;
   }
 
 }
