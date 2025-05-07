@@ -683,7 +683,7 @@ section,
 
 @media(max-width:576px) {
   .about-us{
-    margin-top: -2rem !important;
+    margin-top: -4rem !important;
   }
  .about-section div.row{
   padding-top: 0 !important;
