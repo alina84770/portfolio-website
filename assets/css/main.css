@@ -675,7 +675,6 @@ section,
 --------------------------------------------------------------*/
 .about-section {
   padding: 3rem 0;
-
 }
 
 .about-section img {
@@ -688,7 +687,7 @@ section,
 
 @media(max-width:576px) {
   .about-section {
-    margin-top: -10rem !important;
+    margin-top: -12rem !important;
   }
 
 }
