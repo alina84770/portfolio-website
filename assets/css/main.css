@@ -673,6 +673,7 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+
 .about-section img{
   width: 50%;
   background-color: var(--accent-color);
@@ -681,15 +682,6 @@ section,
   padding: 2rem 2rem 0 2rem;
 }
 
-@media(max-width:576px) {
-  .about-us{
-    margin-top: -4rem !important;
-  }
- .about-section div.row{
-  padding-top: 0 !important;
- }
-
-}
 
 /*--------------------------------------------------------------
 # Skills Section
