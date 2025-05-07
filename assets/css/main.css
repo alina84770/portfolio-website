@@ -673,10 +673,6 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about-section{
-  padding: 3rem 0;
-}
-
 .about-section img{
   width: 50%;
   background-color: var(--accent-color);
@@ -686,9 +682,12 @@ section,
 }
 
 @media(max-width:576px) {
-  .about-section {
-    margin-top: -9rem;
+  .about-us{
+    margin-top: -2rem !important;
   }
+ .about-section div.row{
+  padding-top: 0 !important;
+ }
 
 }
 
