@@ -610,7 +610,7 @@ section,
 --------------------------------------------------------------*/
 .hero-section {
   width: 100%;
-  height: 82vh; /* default for smaller screens */
+  height: 75vh;
 }
 
 /* For larger screens (e.g., desktops) */
