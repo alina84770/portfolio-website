@@ -610,7 +610,14 @@ section,
 --------------------------------------------------------------*/
 .hero-section {
   width: 100%;
-  height: 90vh;
+  height: 82vh; /* default for smaller screens */
+}
+
+/* For larger screens (e.g., desktops) */
+@media (min-width: 992px) {
+  .hero-section {
+    height: 90vh;
+  }
 }
 
 .hero-section .container {
@@ -673,11 +680,11 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-#about{
+#about {
   background-color: var(--accent-color);
 }
 
-.about-section img{
+.about-section img {
   width: 50%;
   background-color: #000000;
   border: 2px solid var(--default-color);
@@ -685,13 +692,13 @@ section,
   padding: 2rem 2rem 0 2rem;
 }
 
-.about-btn{
+.about-btn {
   background-color: black !important;
   color: var(--default-color) !important;
   box-shadow: 0 0 1rem var(--default-color);
 }
 
-.about-btn:hover{
+.about-btn:hover {
   background-color: var(--default-color) !important;
   box-shadow: 0 0 9px #000000;
   color: #000000 !important;
