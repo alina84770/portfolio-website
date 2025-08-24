@@ -195,5 +195,34 @@
 
   });
 
+  let sendBtn = document.querySelector('.send-btn');
+  let inputFields = document.querySelectorAll('input');
+  let textArea = document.querySelector('textarea');
+  //Form handling
+  function SendEmail() {
+    sendBtn.innerText = "submitting....."
+    const templateParams = {
+      name: document.querySelector('#name').value,
+      email: document.querySelector('#email').value,
+      subject: document.querySelector('#subject').value,
+      message: document.querySelector('#message').value,
+    };
+    emailjs.send("service_ww5djpl", "template_yk2ei5h", templateParams)
+      .then(() => {
+        alert("Message sent sucessfully!");
+        for (let field of inputFields) {
+          field.value = "";
+        }
+        textArea.value="";
+        sendBtn.innerText = "send message";
+      })
+      .catch((error) => {
+        console.log(`Error while sending email: ${error}`);
+        alert("Failed to send email. Please try again.");
+      })
+
+  }
+
+  sendBtn.addEventListener('click', SendEmail);
 
 })();

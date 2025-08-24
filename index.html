@@ -34,6 +34,17 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- EmailJs Script-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "bZIESuECRgp6EfA9n",
+      });
+    })();
+  </script>
+
 </head>
 
 <body class="index-page">
@@ -72,7 +83,8 @@
               <p class="hero-paragraph">I am a <span class="typed"
                   data-typed-items="Frontend Developer,Web Designer"></span><span
                   class="typed-cursor typed-cursor--blink"></span></p>
-              <p class="mt-2">I am a motivated frontend developer skilled in HTML, CSS, Bootstrap and JavaScript.
+              <p class="mt-2">I am a motivated frontend developer skilled in HTML, CSS, Bootstrap, JavaScript and
+                React.js .
                 Through
                 practice projects, I have gained hands-on experience in creating modern, responsive websites and
                 applications, and I am excited to keep learning and building.</p>
@@ -81,7 +93,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center">
-            <img src="assets/img/picture1.png" class="img-fluid rounded-pill d-none d-md-block" data-aos="fade-in">
+            <img src="assets/img/picture1.png" class="img-fluid rounded-pill" data-aos="fade-in">
           </div>
         </div>
       </div>
@@ -498,7 +510,8 @@
                   <a href="https://github.com/alina84770/js-student-crud-system-.git">
                     <button class="btn fw-bold ms-2">View Code</button>
                   </a>
-                  <p class="px-3">A responsive JavaScript-based Student CRUD system with Add, View, Update, and Delete functionality using Local Storage for data persistence.</p>
+                  <p class="px-3">A responsive JavaScript-based Student CRUD system with Add, View, Update, and Delete
+                    functionality using Local Storage for data persistence.</p>
                 </div>
               </div>
             </div>
@@ -584,28 +597,28 @@
 
           <!-- start contact form -->
           <div class="col-lg-8 col-md-6 col-sm-12 col-12">
-            <form action="https://formsubmit.co/alina84770@gmail.com" method="POST" class="contact-form"
-              data-aos="fade-up" data-aos-delay="600">
+            <form class="contact-form" data-aos="fade-up" data-aos-delay="600">
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required="">
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message"
+                    required=""></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <button type="submit">Send Message</button>
+                  <button type="button" class="send-btn py-2 px-3">Send Message</button>
                 </div>
 
               </div>
