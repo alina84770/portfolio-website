@@ -195,12 +195,82 @@
 
   });
 
+
+  //Contact Form handling
+  let contactForm = document.querySelector('.contact-form');
   let sendBtn = document.querySelector('.send-btn');
-  let inputFields = document.querySelectorAll('input');
-  let textArea = document.querySelector('textarea');
-  //Form handling
+  let nameErrorMessage = document.querySelector('.name-err-msj');
+  let emailErrorMessage = document.querySelector('.email-err-msj');
+  let subjectErrorMessage = document.querySelector('.subject-err-msj');
+  let messageErrorMessage = document.querySelector('.message-err-msj');
+
+  // name validation
+  function NameValidation() {
+    let name = document.querySelector('#name').value;
+    if (name.trim() === "") {
+      nameErrorMessage.innerText = "Name is required";
+      return false;
+    }
+    else if (name.length < 5) {
+      nameErrorMessage.innerText = "Name must be 5 character long";
+      return false;
+    }
+    else if (!name.match(/^[A-Za-z\s]{5,50}$/)) {
+      nameErrorMessage.innerText = "Name must contain only letters and spaces.";
+      return false;
+    }
+    else {
+      nameErrorMessage.innerText = "";
+      return true;
+    }
+  }
+
+  // email validation
+  function EmailValidation() {
+    let email = document.querySelector('#email').value;
+    if (email.trim() === "") {
+      emailErrorMessage.innerText = "Email is required";
+      return false;
+    }
+    else if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+      emailErrorMessage.innerText = "Please enter a valid email address."
+      return false;
+    }
+    else {
+      emailErrorMessage.innerText = "";
+      return true;
+    }
+  }
+
+  // subject validation
+  function SubjectValidation() {
+    let subject = document.querySelector('#subject').value;
+    if (subject.trim() === "") {
+      subjectErrorMessage.innerText = "Subject is required";
+      return false;
+    }
+    else {
+      subjectErrorMessage.innerText = "";
+      return true;
+    }
+  }
+
+  // message validation
+  function MessageValidation() {
+    let message = document.querySelector('#message').value;
+    if (message.trim() === "") {
+      messageErrorMessage.innerText = "Message is required";
+      return false;
+    }
+    else {
+      messageErrorMessage.innerText = "";
+      return true;
+    }
+  }
+
+  //send message function
   function SendEmail() {
-    sendBtn.innerText = "submitting....."
+    sendBtn.innerText = "submitting...";
     const templateParams = {
       name: document.querySelector('#name').value,
       email: document.querySelector('#email').value,
@@ -209,12 +279,9 @@
     };
     emailjs.send("service_ww5djpl", "template_yk2ei5h", templateParams)
       .then(() => {
-        alert("Message sent sucessfully!");
-        for (let field of inputFields) {
-          field.value = "";
-        }
-        textArea.value="";
-        sendBtn.innerText = "send message";
+        alert("Message sent successfully!");
+        contactForm.reset();
+        sendBtn.innerText = "Send Message";
       })
       .catch((error) => {
         console.log(`Error while sending email: ${error}`);
@@ -223,6 +290,15 @@
 
   }
 
-  sendBtn.addEventListener('click', SendEmail);
+  //check all validations and send then send message on send button click
+  sendBtn.addEventListener('click', (e) => {
+    if (NameValidation() && EmailValidation() && SubjectValidation() && MessageValidation()) {
+      SendEmail();
+      nameErrorMessage.innerText = "";
+      emailErrorMessage.innerText = "";
+      subjectErrorMessage.innerText = "";
+      messageErrorMessage.innerText = "";
+    }
+  })
 
 })();

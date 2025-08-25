@@ -180,8 +180,10 @@
               <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
               </div>
             </div>
-            <!-- End Skills Item -->
           </div>
+          <!-- End Skills Item -->
+
+
           <!-- start Skills Item -->
           <div class="progress">
             <span class="skill"><i class="fa-brands fa-react me-3 skill-icon"></i><span
@@ -602,19 +604,22 @@
 
                 <div class="col-md-6">
                   <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required="">
+                 <p class="name-err-msj text-danger"></p>
                 </div>
 
                 <div class="col-md-6 ">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                   <p class="email-err-msj text-danger"></p>
                 </div>
 
                 <div class="col-md-12">
                   <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+                   <p class="subject-err-msj text-danger"></p>
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message"
-                    required=""></textarea>
+                  <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message" required=""></textarea>
+                      <p class="message-err-msj text-danger"></p>
                 </div>
 
                 <div class="col-md-12 text-center">
